@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Perfect diet - 40+ Online Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="../img/icon.png" rel="icon">
+
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="../css/style.css" rel="stylesheet">
+  <style>
+         
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 25px;
+  }
+  .login-box h2 {
+    font-size: 1.3rem;
+  }
+}
+.cart-container {
+  text-align: center;
+}
+
+.cart-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #1e80f0;
+  border-radius: 2px;
+}
+
+.cart-box p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+
+.return-btn {
+  display: inline-block;
+  background-color: #1e4be0;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.return-btn:hover {
+  background-color: #153cb5;
+}
+
+
+@media (max-width: 600px) {
+  .cart-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .return-btn {
+    width: 80%;
+  }
+}
+.reviews-section {
+  background: #f8f9fb;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b0b33;
+  margin-bottom: 10px;
+}
+
+.reviews-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 25px;
+  color: #1c1c5c;
+}
+
+.reviews-section .note {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.reviews-section .required {
+  color: red;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.review-form label {
+  font-weight: 600;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.stars i {
+  font-size: 22px;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.stars i.active {
+  color: #ffb400;
+}
+
+.save-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.submit-btn {
+  background: #2954dc;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 120px;
+  align-self: flex-end;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #1a3ecb;
+}
+
+    </style>
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total"); 
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    updateCartBadge();
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", e => {
+        e.preventDefault();
+
+        const name = button.getAttribute("data-name");
+        const price = parseInt(button.getAttribute("data-price"));
+        const image = button.getAttribute("data-image");
+
+        const existing = cart.find(item => item.name === name);
+        if (!existing) {
+          cart.push({ name, price, image });
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        updateCartBadge();
+        alert(`${name} added to cart! 🛒`);
+      });
+    });
+
+    function updateCartBadge() {
+      let totalItems = cart.length;
+      let totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+      if (cartCount) cartCount.textContent = totalItems;
+      if (cartTotal) cartTotal.textContent = `₹${totalPrice}`;
+    }
+  });
+</script>
+
+<script>
+  const stars = document.querySelectorAll(".stars i");
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+      stars.forEach(s => s.classList.remove("active"));
+      star.classList.add("active");
+      let prev = star.previousElementSibling;
+      while (prev) {
+        prev.classList.add("active");
+        prev = prev.previousElementSibling;
+      }
+    });
+  });
+</script>
+
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+  
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>40+ Online Courses</h2>
+                <p class="sub">VWX B2B (OPC) PVT LTD</p>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Course list</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Student Login</a></li>
+                    <li><a href="Studentregistration.html"">Student Registration</a></li>
+                </ul>
+            </nav>
+
+          <div class=" cart-info"><a href="Cart.html">
+                               
+  <a href="Cart.html"><span id="cart-count" class="badge">0</span>
+    <span id="cart-total">₹0</span>.00
+    <i class="fa fa-shopping-cart"></i>
+    
+  </a>
+</div>
+        </div>
+        </div>
+    </header>
+
+  
+    <div class="container-xxl py-2 mt-4">
+        <div class="container">
+          
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
+                <center>
+      <section class="reviews-section">
+  <h2>Reviews</h2>
+  <p>There are no reviews yet.</p>
+
+  <h3>Be the first to review <span id="product-name">“Perfect diet”</span></h3>
+  <p class="note">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+
+  <form class="review-form">
+    <label>Your rating <span class="required">*</span></label>
+    <div class="stars">
+      <i class="fa fa-star" data-value="1"></i>
+      <i class="fa fa-star" data-value="2"></i>
+      <i class="fa fa-star" data-value="3"></i>
+      <i class="fa fa-star" data-value="4"></i>
+      <i class="fa fa-star" data-value="5"></i>
+    </div>
+
+    <label for="review">Your review <span class="required">*</span></label>
+    <textarea id="review" rows="4" placeholder="Write your review..."></textarea>
+
+    <label for="name">Name <span class="required">*</span></label>
+    <input type="text" id="name" placeholder="Your name" required>
+
+    <label for="email">Email <span class="required">*</span></label>
+    <input type="email" id="email" placeholder="Your email" required>
+
+    <div class="save-info">
+      <input type="checkbox" id="save-info">
+      <label for="save-info">Save my name, email, and website in this browser for the next time I comment.</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</section>
+
+                </center>     
+               
+
+            </div>
+        </div>
+    </div>
+ 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column about">
+                <p>
+                    Learn Anytime, Anything & from Anywhere at own Schedule.<br>
+                    Happy Learning!
+                </p>
+                <p><strong>Company Name :</strong><br>
+                    <a href="#">VWX B2B OPC PVT LTD</a><br>
+                    Address : S3 3rd Floor | Mahalaxmi Building | Narendra Nagar |<br>
+                    Nagpur 440015 | Maharashtra, India<br>
+                    Contact No : +91 7420847887
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Categories</h3>
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Account</h3>
+                <ul>
+                    <li><a href="#">Student Registration</a></li>
+                    <li><a href="#">Student Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 VWX B2B (OPC) PVT LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+ 
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

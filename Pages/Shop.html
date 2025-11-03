@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Shop - 40+ Online Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+   
+    <link href="../img/icon.png" rel="icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+ 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet">
+  <style>
+  
+@media (max-width: 600px) {
+  .cart-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .return-btn {
+    width: 80%;
+  }
+}
+.shop-section {
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.shop-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.shop-header p {
+  color: #555;
+}
+
+.sort-select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 15px 0 10px;
+  color: #0a0a0a;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.price .small {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.badgetwo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 0 5px 5px 0;
+}
+
+.cart-btn,
+.read-btn {
+  background-color: #1e4be0;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.read-btn {
+  background-color: #003399;
+}
+
+.cart-btn:hover,
+.read-btn:hover {
+  background-color: #0d3acc;
+}
+
+@media (max-width: 768px) {
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+
+    </style><script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>40+ Online Courses</h2>
+                <p class="sub">VWX B2B (OPC) PVT LTD</p>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Course list</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Student Login</a></li>
+                    <li><a href="Studentregistration.html"">Student Registration</a></li>
+                </ul>
+            </nav>
+
+          <div class=" cart-info"><a href="Cart.html">
+                               
+  <a href="Cart.html"><span id="cart-count" class="badge">0</span>
+    <span id="cart-total">₹0</span>.00
+    <i class="fa fa-shopping-cart"></i>
+    
+  </a>
+</div>
+        </div>
+        </div>
+    </header>
+
+    <div class="container-xxl py-2 mt-4">
+        <div class="container">
+          
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
+                <center>
+              <section class="shop-section">
+    <div class="shop-header">
+      <div>
+        <h2>Shop</h2>
+        <p>Showing all 4 results</p>
+      </div>
+      <select class="sort-select">
+        <option>Default sorting</option>
+        <option>Sort by popularity</option>
+        <option>Sort by average rating</option>
+        <option>Sort by latest</option>
+        <option>Sort by price: low to high</option>
+        <option>Sort by price: high to low</option>
+      </select>
+    </div>
+
+    <div class="product-grid">
+   
+      <div class="product-card">
+        <span class="badgetwo">Sale!</span>
+        <img src="https://vwxb2bonlinecourse.in/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="All Courses Bundle" />
+        <h3>All courses Bundle</h3>
+        <p class="price"><span class="old">₹53,973.00</span> ₹999.00 <span class="small">incl. GST</span></p>
+        <button class="cart-btn add-to-cart"    data-name="All courses Bundle" 
+   data-price="999" 
+   data-image="https://vwxb2bonlinecourse.in/wp-content/uploads/woocommerce-placeholder-300x300.png">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <span class="badgetwo">Sale!</span>
+        <img src="https://vwxb2bonlinecourse.in/wp-content/uploads/2025/02/major-components-of-digital-marketing-300x300.png" alt="Digital Marketing Course" />
+        <h3>Digital Marketing Mastery Course Bundle</h3>
+        <p class="price"><span class="old">₹37,981.00</span> ₹4,999.00 <span class="small">incl. GST</span></p>
+        <button class="cart-btn add-to-cart"    data-name="Digital Marketing Mastery Course Bundle" 
+   data-price="4999" 
+   data-image="https://vwxb2bonlinecourse.in/wp-content/uploads/2025/02/major-components-of-digital-marketing-300x300.png">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <span class="badgetwo">Sale!</span>
+        <img src="https://vwxb2bonlinecourse.in/wp-content/uploads/2025/03/Lead-Generation-Without-Website-300x300.png" alt="Lead Gen Course" />
+        <h3>Lead Gen without Website</h3>
+        <p class="price"><span class="old">₹999.00</span> ₹499.00 <span class="small">incl. GST</span></p>
+        <button class="cart-btn add-to-cart"    data-name="Lead Gen without Website" 
+   data-price="499" 
+   data-image="https://vwxb2bonlinecourse.in/wp-content/uploads/2025/03/Lead-Generation-Without-Website-300x300.png">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+
+        <img src="https://vwxb2bonlinecourse.in/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="Perfect Diet" />
+        <h3>Perfect diet</h3>
+        <button class="read-btn"><a href="Perfectdiet.html">Read more</a></button>
+      </div>
+    </div>
+  </section>
+                </center>     
+               
+
+            </div>
+        </div>
+    </div>
+ 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column about">
+                <p>
+                    Learn Anytime, Anything & from Anywhere at own Schedule.<br>
+                    Happy Learning!
+                </p>
+                <p><strong>Company Name :</strong><br>
+                    <a href="#">VWX B2B OPC PVT LTD</a><br>
+                    Address : S3 3rd Floor | Mahalaxmi Building | Narendra Nagar |<br>
+                    Nagpur 440015 | Maharashtra, India<br>
+                    Contact No : +91 7420847887
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Categories</h3>
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Account</h3>
+                <ul>
+                    <li><a href="#">Student Registration</a></li>
+                    <li><a href="#">Student Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 VWX B2B (OPC) PVT LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+  
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total"); 
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    updateCartBadge();
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", e => {
+        e.preventDefault();
+
+        const name = button.getAttribute("data-name");
+        const price = parseInt(button.getAttribute("data-price"));
+        const image = button.getAttribute("data-image");
+
+        const existing = cart.find(item => item.name === name);
+        if (!existing) {
+          cart.push({ name, price, image });
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        updateCartBadge();
+        alert(`${name} added to cart! 🛒`);
+      });
+    });
+
+    function updateCartBadge() {
+      let totalItems = cart.length;
+      let totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+      if (cartCount) cartCount.textContent = totalItems;
+      if (cartTotal) cartTotal.textContent = `₹${totalPrice}`;
+    }
+  });
+</script>
+
+
+
+
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

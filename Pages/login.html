@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Student Login - 40+ Online Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+  
+    <link href="../img/icon.png" rel="icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+ 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="../css/style.css" rel="stylesheet">
+  <style>
+     
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  background-color: #ff5722;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.location {
+  color: #ff5722;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.contact-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #001d3d;
+  margin-bottom: 40px;
+}
+
+.contact-box {
+  background-color: #f9f9f9;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  border-radius: 10px;
+  text-align: left;
+}
+.contact-box h3 {
+  border-left: 3px solid #ff5722;
+  padding-left: 10px;
+  font-size: 1.3rem;
+  color: #001d3d;
+  margin-bottom: 30px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.contact-item .icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffe7df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ff5722;
+  font-size: 20px;
+}
+.label {
+  font-weight: bold;
+  color: #333;
+}
+.info {
+  color: #555;
+}
+
+.address-box {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.address-box h3 {
+  border-left: 3px solid #ff5722;
+  padding-left: 10px;
+  color: #001d3d;
+  margin-bottom: 15px;
+}
+.address-box p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  font-size: 28px;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .contact-box, .address-box {
+    padding: 25px;
+  }
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background: white;
+  padding: 40px 35px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.login-box h2 {
+  font-size: 1.5rem;
+  color: #1c1c1c;
+  margin-bottom: 25px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d3d6de;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #4a68f7;
+  box-shadow: 0 0 5px rgba(74, 104, 247, 0.3);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.options label {
+  color: #222;
+}
+
+.forgot {
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.forgot:hover {
+  color: #4a68f7;
+}
+
+
+button {
+  width: 100%;
+  background-color: #4a68f7;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #3e5de0;
+}
+
+
+.register-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #444;
+  font-size: 0.9rem;
+}
+.register-text a {
+  color: #3e5de0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 25px;
+  }
+  .login-box h2 {
+    font-size: 1.3rem;
+  }
+}
+
+    </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+
+</head>
+
+<body>
+
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>40+ Online Courses</h2>
+                <p class="sub">VWX B2B (OPC) PVT LTD</p>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Course list</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Student Login</a></li>
+                    <li><a href="Studentregistration.html"">Student Registration</a></li>
+                </ul>
+            </nav>
+
+     <div class=" cart-info"><a href="Cart.html">
+                               
+  <a href="Cart.html"><span id="cart-count" class="badge">0</span>
+    <span id="cart-total">₹0</span>.00
+    <i class="fa fa-shopping-cart"></i>
+    
+  </a>
+</div>
+        </div>
+        </div>
+    </header>
+
+  
+    <div class="container-xxl py-2 mt-4">
+        <div class="container">
+          
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
+                <center>
+                  <div class="login-container">
+    <div class="login-box">
+      <h2>Hi, Welcome back!</h2>
+      <form action="#">
+        <input type="text" placeholder="Username or Email Address" required />
+        <input type="password" placeholder="Password" required />
+
+        <div class="options">
+          <label><input type="checkbox" /> Keep me signed in</label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Sign In</button>
+
+        <p class="register-text">
+          Don't have an account? <a href="Studentregistration.html">Register Now</a>
+        </p>
+      </form>
+    </div>
+  </div>
+                </center>     
+               
+
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column about">
+                <p>
+                    Learn Anytime, Anything & from Anywhere at own Schedule.<br>
+                    Happy Learning!
+                </p>
+                <p><strong>Company Name :</strong><br>
+                    <a href="#">VWX B2B OPC PVT LTD</a><br>
+                    Address : S3 3rd Floor | Mahalaxmi Building | Narendra Nagar |<br>
+                    Nagpur 440015 | Maharashtra, India<br>
+                    Contact No : +91 7420847887
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Categories</h3>
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #ffffff;">Account</h3>
+                <ul>
+                    <li><a href="#">Student Registration</a></li>
+                    <li><a href="#">Student Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 VWX B2B (OPC) PVT LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+  
+
+
+
+
+   
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total"); 
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    updateCartBadge();
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", e => {
+        e.preventDefault();
+
+        const name = button.getAttribute("data-name");
+        const price = parseInt(button.getAttribute("data-price"));
+        const image = button.getAttribute("data-image");
+
+        const existing = cart.find(item => item.name === name);
+        if (!existing) {
+          cart.push({ name, price, image });
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        updateCartBadge();
+        alert(`${name} added to cart! 🛒`);
+      });
+    });
+
+    function updateCartBadge() {
+      let totalItems = cart.length;
+      let totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+      if (cartCount) cartCount.textContent = totalItems;
+      if (cartTotal) cartTotal.textContent = `₹${totalPrice}`;
+    }
+  });
+</script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
